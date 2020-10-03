@@ -29,7 +29,7 @@ d3.csv("cleaned_wine_v2(syrah).csv", function(data) {
 
      // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, 4000])
+        .domain([0, 100])
         .range([ 0, width ]);
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
@@ -37,7 +37,7 @@ d3.csv("cleaned_wine_v2(syrah).csv", function(data) {
 
   // Add Y axis
     var y = d3.scaleLinear()
-        .domain([0, 500000])
+        .domain([0, 800])
         .range([ height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
