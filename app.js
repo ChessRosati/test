@@ -37,7 +37,6 @@ d3.csv("cleaned_wine_v2(syrah).csv", function(data) {
       .domain(d3.extent(data, function(d) { return d.points; }))
       .range([ 0, width ]);
     svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x).ticks(7));
 
     // Add Y axis
