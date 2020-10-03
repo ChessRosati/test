@@ -13,7 +13,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("../cleaned_wine_v2(syrah).csv", function(data) {
+d3.csv("./cleaned_wine_v2(syrah).csv", function(data) {
 
     // List of groups (here I have one group per column)
     var allGroup = d3.map(data, function(d){return(d.region_1)}).keys()
