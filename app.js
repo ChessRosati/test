@@ -58,18 +58,14 @@ d3.csv("cleaned_wine_v2(syrah).csv", function(data) {
 
       // Create new data with the selection?
       var dataFilter = data.filter(function(d){return d.region_1==selectedGroup})
-
-      // Give these new data to update line
-      line
-          .datum(dataFilter)
-          .transition()
-          .duration(1000)
-          .attr("d", d3.line()
-            .x(function(d) { return x(d.points) })
-            .y(function(d) { return y(+d.price) })
-          )
-          .attr("stroke", function(d){ return myColor(selectedGroup) })
-    }
+      
+      // Update chart
+      svg.selectAll("circle")
+        .datum(dataFilter)
+        .transition()
+        .duration(1000)
+        .attr("cx", function (d) { return x(d.points); } )
+        .attr("cy", function (d) { return y(d.price); } )
 
     // When the button is changed, run the updateChart function
     d3.select("#selectButton").on("change", function(d) {
