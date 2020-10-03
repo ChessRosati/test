@@ -27,37 +27,31 @@ d3.csv("cleaned_wine_v2(syrah).csv", function(data) {
       .text(function (d) { return d; }) // text showed in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
-    // A color scale: one color for each group
-    var myColor = d3.scaleOrdinal()
-      .domain(allGroup)
-      .range(d3.schemeSet2);
-
-    // Add X axis --> it is a date format
+     // Add X axis
     var x = d3.scaleLinear()
-      .domain(d3.extent(data, function(d) { return d.points; }))
-      .range([ 0, width ]);
+        .domain([0, 4000])
+        .range([ 0, width ]);
     svg.append("g")
-      .call(d3.axisBottom(x).ticks(7));
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
 
-    // Add Y axis
+  // Add Y axis
     var y = d3.scaleLinear()
-      .domain([0, d3.max(data, function(d) { return +d.price; })])
-      .range([ height, 0 ]);
+        .domain([0, 500000])
+        .range([ height, 0]);
     svg.append("g")
-      .call(d3.axisLeft(y));
+        .call(d3.axisLeft(y));
 
-    // Initialize line with first group of the list
-    var line = svg
-      .append('g')
-      .append("path")
-        .datum(data.filter(function(d){return d.region_1==allGroup[0]}))
-        .attr("d", d3.line()
-          .x(function(d) { return x(d.points) })
-          .y(function(d) { return y(+d.price) })
-        )
-        .attr("stroke", function(d){ return myColor("valueA") })
-        .style("stroke-width", 4)
-        .style("fill", "none")
+  // Add dots
+  svg.append('g')
+    .selectAll("dot")
+    .datum(data.filter(function(d){return d.region_1==allGroup[0]}))
+    .enter()
+    .append("circle")
+      .attr("cx", function (d) { return x(d.points); } )
+      .attr("cy", function (d) { return y(d.price); } )
+      .attr("r", 1.5)
+      .style("fill", "#69b3a2")
 
     // A function that update the chart
     function update(selectedGroup) {
