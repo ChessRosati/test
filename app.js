@@ -1,4 +1,23 @@
-var regions = d3.map("cleaned_wine_v2(syrah).csv", function(d){return(d.region_1)}).keys()
+var regions = ['Australia',
+    'South Africa',
+    'Chile',
+    'Italy',
+    'France',
+    'Israel',
+    'Spain',
+    'New Zealand',
+    'Portugal',
+    'Morocco',
+    'India',
+    'Austria',
+    'Argentina',
+    'Greece',
+    'Canada',
+    'Turkey',
+    'Bulgaria',
+    'Hungary',
+    'Mexico',
+    ]
 
 Plotly.d3.csv("cleaned_wine_v2(syrah).csv", (err, rows) => {
   var data = regions.map(y => {
