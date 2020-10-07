@@ -53,7 +53,7 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
             width: 480
         };
 
-        Plotly.newPlot('plotdiv', data, layout);
+        Plotly.newPlot('myDiv', data, layout);
     };
 
     var innerContainer = document.querySelector('[data-num="0"'),
