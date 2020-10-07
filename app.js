@@ -1,4 +1,4 @@
-d3.csv("../cleaned_wine_v2(syrah).csv", function(data2) {
+d3.csv("./cleaned_wine_v2(syrah).csv", function(data2) {
   
   function _filter(list, predi) {
       let newList = [];
