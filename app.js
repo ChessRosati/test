@@ -23,7 +23,7 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
         currentPrice = [];
         for (var i = 0 ; i < allCountryNames.length ; i++){
             if ( allCountryNames[i] === chosenCountry ) {
-                currentPoints.push(allpoints[i]);
+                currentPoints.push(allPoints[i]);
                 currentPrice.push(allPrice[i]);
             }
         }
