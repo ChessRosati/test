@@ -1,4 +1,6 @@
-d3.csv("./cleaned_wine_v2(syrah).csv", function(data2) {
+d3.csv("../cleaned_wine_v2(syrah).csv").then(function(data2) {
+    console.log(data2[0]);
+  });
   
   function _filter(list, predi) {
       let newList = [];
@@ -62,4 +64,3 @@ d3.csv("./cleaned_wine_v2(syrah).csv", function(data2) {
       name : 'ONE_TRACE_SMAPLE'
   }
   Plotly.plot('plotly-div2', [data], {}, {showSendToCloud:true});
-})
