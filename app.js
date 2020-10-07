@@ -5,12 +5,12 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
     }
 
     var allCountryNames = unpack(rows, 'country'),
-        allYear = unpack(rows, 'price'),
-        allGdp = unpack(rows, 'points'),
+        allPrice = unpack(rows, 'price'),
+        allPoints = unpack(rows, 'points'),
         listofCountries = [],
         currentCountry,
-        currentGdp = [],
-        currentYear = [];
+        currentPoints = [],
+        currentPrice = [];
 
     for (var i = 0; i < allCountryNames.length; i++ ){
         if (listofCountries.indexOf(allCountryNames[i]) === -1 ){
@@ -19,12 +19,12 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
     }
 
     function getCountryData(chosenCountry) {
-        currentGdp = [];
-        currentYear = [];
+        currentPoints = [];
+        currentPrice = [];
         for (var i = 0 ; i < allCountryNames.length ; i++){
             if ( allCountryNames[i] === chosenCountry ) {
-                currentGdp.push(allGdp[i]);
-                currentYear.push(allYear[i]);
+                currentPoints.push(allpoints[i]);
+                currentPrice.push(allPrice[i]);
             }
         }
     };
@@ -36,8 +36,8 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
         getCountryData(chosenCountry);
 
         var trace1 = {
-            x: currentYear,
-            y: currentGdp,
+            x: currentPrice,
+            y: currentPoints,
             mode: 'markers',
             marker: {
                 size: 12,
