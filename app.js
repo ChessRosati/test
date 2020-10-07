@@ -1,4 +1,4 @@
-d3.csv("../cleaned_wine_v2(syrah).csv").then(function(data2) {
+d3.csv("./cleaned_wine_v2(syrah).csv").then(function(data2) {
     console.log(data2[0]);
   });
   
