@@ -6,7 +6,7 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
 
     var allCountryNames = unpack(rows, 'country'),
         allPrice = unpack(rows, 'price'),
-        allPoints = unpack(rows, 'points'),
+    var allPoints = unpack(rows, 'points'),
         listofCountries = [],
         currentCountry,
         currentPoints = [],
