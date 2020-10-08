@@ -55,10 +55,10 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
         
         xaxis: {
             title: 'AXIS TITLE',
-
+        },
         yaxis: {
             title: 'AXIS TITLE',
-   
+        },
         Plotly.newPlot('myDiv', data, layout);
     };
 
