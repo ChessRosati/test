@@ -53,12 +53,26 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
             width: 480
         };
         
-        xaxis: {
-            title: 'AXIS TITLE',
-        },
-        yaxis: {
-            title: 'AXIS TITLE',
-        },
+         xaxis: {
+    title: {
+      text: 'x Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'y Axis',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
         Plotly.newPlot('myDiv', data, layout);
     };
 
