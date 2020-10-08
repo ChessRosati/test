@@ -48,11 +48,25 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
         var data = [trace1];
 
         var layout = {
-            title:'Scatter Plot',
+            title:'Wine Price Versus Quality',
             height: 400,
             width: 480
         };
-
+        
+        xaxis: {
+            title: 'AXIS TITLE',
+            titlefont: {
+                family: 'Arial, sans-serif',
+                size: 18,
+                color: 'black'
+    },
+        yaxis: {
+            title: 'AXIS TITLE',
+            titlefont: {
+                family: 'Arial, sans-serif',
+                size: 18,
+                color: 'black'
+    },
         Plotly.newPlot('myDiv', data, layout);
     };
 
