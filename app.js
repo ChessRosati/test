@@ -53,7 +53,7 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
             width: 480,
             xaxis: {
                 title: {
-                  text: 'x Axis',
+                  text: 'Wine Price',
                   font: {
                     family: 'Courier New, monospace',
                     size: 18,
@@ -63,7 +63,7 @@ Plotly.d3.csv("./cleaned_wine_v2(syrah).csv", function(err, rows){
               },
               yaxis: {
                 title: {
-                  text: 'y Axis',
+                  text: 'Wine Rating',
                   font: {
                     family: 'Courier New, monospace',
                     size: 18,
